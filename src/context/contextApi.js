@@ -11,11 +11,11 @@ export const AppContext = (props) => {
   }, [selectCategories]);
   const fetchSelectedCategoryData = async (query) => {
     setLoading(true);
-    fetchDataFromApi(`search/?q=${query}`).then(({contents}) => {
+    fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
       console.log(contents);
       setSearctResults(contents);
       setLoading(false);
-   });
+    });
   };
   return (
     <Context.Provider
