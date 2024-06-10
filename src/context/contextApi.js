@@ -3,9 +3,10 @@ import { fetchDataFromApi } from "../utils/api";
 export const Context = createContext();
 export const AppContext = (props) => {
   const [loading, setLoading] = useState(false);
-  const [searchResults, setSearctResults] = useState(false);
+  const [searchResults, setSearchResults] = useState(false);
   const [selectCategories, setSelectCategories] = useState("New");
   const [mobileMenu, setMobileMenu] = useState(false);
+  
   useEffect(() => {
     fetchSelectedCategoryData(selectCategories);
   }, [selectCategories]);
@@ -13,7 +14,7 @@ export const AppContext = (props) => {
     setLoading(true);
     fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
       console.log(contents);
-      setSearctResults(contents);
+      setSearchResults(contents);
       setLoading(false);
     });
   };
@@ -23,7 +24,7 @@ export const AppContext = (props) => {
         loading,
         setLoading,
         searchResults,
-        setSearctResults,
+        setSearchResults,
         selectCategories,
         setSelectCategories,
         mobileMenu,
