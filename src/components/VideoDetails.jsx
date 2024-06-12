@@ -8,8 +8,6 @@ import { abbreviateNumber } from "js-abbreviation-number";
 import { fetchDataFromApi } from "../utils/api";
 import { Context } from "../context/contextApi";
 import SuggestionVideoCard from "./SuggestionVideoCard.jsx";
-import { Router } from "react-router-dom";
-
 const VideoDetails = () => {
   const [video, setVideo] = useState();
   const [relatedVideos, setRelatedVideos] = useState();
@@ -20,7 +18,7 @@ const VideoDetails = () => {
     document.getElementById("root").classList.add("custom-h");
     fetchVideoDetails();
     fetchRelatedVideos();
-  }, [id]);
+  },[id]);
 
   const fetchVideoDetails = () => {
     setLoading(true);
