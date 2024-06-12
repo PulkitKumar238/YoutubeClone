@@ -1,6 +1,5 @@
 import React from "react";
-
-const Loader = () => {
+export default function Loader() {
   return (
     <div class="load-bar">
       <div class="bar"></div>
@@ -9,5 +8,3 @@ const Loader = () => {
     </div>
   );
 };
-
-export default Loader;
